@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useMicVAD, utils } from "@ricky0123/vad-react";
+import { useEffect, useRef, useState } from "react";
 import {
   EVENT_COUNTDOWN_END,
   EVENT_COUNTDOWN_START,
@@ -10,14 +12,6 @@ import {
   ONE_SECOND_IN_MS,
   useCountdown,
 } from "./useCountdown";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useMicVAD, utils } from "@ricky0123/vad-react";
-
-interface EventLogEntry {
-  id: string;
-  label: string;
-  timestamp: string;
-}
 
 interface ChatMessage {
   id: string;
